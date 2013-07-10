@@ -19,39 +19,20 @@
 namespace JMS\Serializer\Tests\Fixtures;
 
 use JMS\Serializer\Annotation\Groups;
-use JMS\Serializer\Annotation\Type;
 
-/** blablub */
-class GroupsObject
+class GroupsListObject
 {
     /**
-     * @Groups({"foo"})
-     * @Type("string")
+     * @Groups({"empty"})
      */
-    private $foo;
-
-    /**
-     * @Groups({"foo","bar"})
-     * @Type("string")
-     */
-    private $foobar;
-
-    /**
-     * @Groups({"bar", "Default"})
-     * @Type("string")
-     */
-    private $bar;
-
-     /**
-     * @Type("string")
-     */
-    private $none;
+    private $groups;
 
     public function __construct()
     {
-        $this->foo  = "foo";
-        $this->bar = "bar";
-        $this->foobar  = "foobar";
-        $this->none = "none";
+        $this->groups = array(
+            new GroupsObject(),
+            new GroupsObject(),
+            new GroupsObject(),
+        );
     }
 }
